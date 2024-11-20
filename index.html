@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>cs</title>
+        <script>
+            function calc() {
+                money = document.getElementById("money").value;
+                moneysum = parseInt(money);
+                year = document.getElementById("year").value;
+                if (year=="1") {
+                    banance=moneysum*0.0175*1;
+                    total=moneysum+banance;                  
+                }
+                if (year=="2") {
+                    banance=moneysum*0.0222*2;
+                    total = moneysum+banance;
+                }
+                document.getElementById("balance").value=banance;
+                document.getElementById("total").value=total;
+            }
+
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>cs-ccc-6</h1>
+            <div>
+                <label style="color:rgba(220, 26, 26, 0.133)">money</label>
+                <input type="text" class="form-control" id="money" placeholder="input">
+            </div>
+            <br>
+            <div>
+                <label style="color:rgba(222, 19, 19, 0.133)">year</label>
+                <select id="year" class="form-control">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <label>balance</label>
+                <input readonly type="text" id="balance" class="form-control">
+            </div>
+            <br>
+            <div>
+                <label>total</label>
+                <input readonly type="text" id="total" class="form-control">
+            </div>
+            <br>
+            <div>
+                <button onclick="calc()" class="btn btn-danger btn-block">calc</button>
+            </div>
+
+        </div>
+    </body>
+</html>
